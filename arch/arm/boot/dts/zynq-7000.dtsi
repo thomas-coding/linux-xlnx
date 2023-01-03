@@ -103,6 +103,21 @@
 		interrupt-parent = <&intc>;
 		ranges;
 
+		cryptomaster:cryptomaster@40000000 {
+			compatible = "slxidmem";
+			interrupt-parent = <&intc>;
+			interrupts = <0 0x1d 4>;
+			reg = <0x40000000 0x2000>;
+		};
+
+		ba414ep:ba414ep@40002000 {
+			compatible = "ba414";
+			interrupt-parent = <&intc>;
+			interrupts = <0 0x1f 4>;
+			reg = <0x40002000 0x2000
+				0x40008000 0x8000>;
+		};
+
 		adc: adc@f8007100 {
 			compatible = "xlnx,zynq-xadc-1.00.a";
 			reg = <0xf8007100 0x20>;
